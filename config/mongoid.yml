@@ -14,11 +14,5 @@ test:
   <<: *defaults
   database: kindness_card_test
 
-# set these environment variables on your prod server
 production:
-  # mongodb://heroku:e2931ahwz2qrzabyc8j5sy@flame.mongohq.com:27094/app482517
-  host: flame.mongohq.com
-  port: 27094
-  username: heroku
-  password: e2931ahwz2qrzabyc8j5sy
-  database: app482517
+  uri: <%= ENV['MONGOHQ_URL'] %>
