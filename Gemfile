@@ -28,3 +28,5 @@ gem 'rails', '3.0.5'
 # group :development, :test do
 #   gem 'webrat'
 # end
+gem "mongoid", ">= 2.0.0.rc.7"
+gem "bson_ext", ">= 1.2.4"
