@@ -1,23 +1,23 @@
-Given /^no user exists with an email of "(.*)"$/ do |email|
+Given /^no account exists with an email of "(.*)"$/ do |email|
   assert_nil User.find(:first, :conditions => { :email => email })
 end
 
-Given /^I am a user named "([^"]*)" with an email "([^"]*)" and password "([^"]*)"$/ do |name, email, password|
+Given /^I am a account named "([^"]*)" with an email "([^"]*)" and password "([^"]*)"$/ do |name, email, password|
   User.new(:name => name,
             :email => email,
             :password => password,
             :password_confirmation => password).save!
 end
 
-Given /^I am a new, authenticated user$/ do
+Given /^I am a new, authenticated account$/ do
   email = 'testing@man.net'
   login = 'Testing man'
   password = 'secretpass'
 
-  Given %{I have one user "#{email}" with password "#{password}"}
+  Given %{I have one account "#{email}" with password "#{password}"}
   And %{I go to login}
-  And %{I fill in "user_email" with "#{email}"}
-  And %{I fill in "user_password" with "#{password}"}
+  And %{I fill in "account_email" with "#{email}"}
+  And %{I fill in "account_password" with "#{password}"}
   And %{I press "Sign in"}
 end
 
@@ -37,7 +37,7 @@ Given /^I am signed up as "(.*)\/(.*)"$/ do |email, password|
 end
 
 Given /^I am logout$/ do
-  visit('/users/sign_out')
+  visit('/accounts/sign_out')
 end
 
 When /^I sign in as "(.*)\/(.*)"$/ do |email, password|
@@ -53,7 +53,7 @@ Then /^I should be signed in$/ do
 end
 
 Then /^I sign out$/ do
-  visit('/users/sign_out')
+  visit('/accounts/sign_out')
 end
 
 When /^I return next time$/ do
@@ -67,5 +67,5 @@ Then /^I should be signed out$/ do
 end
 
 Given /^I am not logged in$/ do
-  visit('/users/sign_out') # ensure that at least
+  visit('/accounts/sign_out') # ensure that at least
 end
