@@ -1,4 +1,10 @@
 KindnessCard::Application.routes.draw do
+  resources :accounts
+
+  resources :tracks
+
+  resources :cards
+
   #get \"users\/show\"
 
   root :to => "home#index"
