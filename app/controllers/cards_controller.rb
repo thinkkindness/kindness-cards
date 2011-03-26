@@ -13,7 +13,7 @@ class CardsController < ApplicationController
   # GET /cards/1
   # GET /cards/1.xml
   def show
-    @card = Card.find(params[:id])
+    @card = Card.where(:serial_number => params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
