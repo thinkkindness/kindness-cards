@@ -1,14 +1,36 @@
-source 'http://rubygems.org'
-gem 'rails', '3.0.5'
-gem "mongoid", ">= 2.0.0.rc.7"
-gem "bson_ext", ">= 1.2.4"
-gem "haml", ">= 3.0.25"
-gem "haml-rails", ">= 0.3.4"
-gem "rspec-rails", ">= 2.5", :group => [:development, :test]
-gem "database_cleaner", :group => :test
-gem "factory_girl_rails", ">= 1.1.beta1", :group => :test
-gem "mongoid-rspec", ">= 1.4.1", :group => :test
-gem "cucumber-rails", :group => :test
-gem "capybara", :group => :test
-gem "relish", :group => :development
-gem "devise", ">= 1.2.rc"
+source :gemcutter
+
+gem 'rails', '~> 3.0'
+
+# Database
+gem "mongoid", "~> 2.0.0.rc", :git => 'git://github.com/mongoid/mongoid.git'
+gem "bson_ext", "~> 1.1"
+
+# Authentication
+gem 'devise', '~> 1.2.rc'
+
+# Authorization
+gem 'cancan', '~> 1.5'
+
+# Other
+gem 'haml'
+gem 'compass'
+# gem 'pusher'
+# gem 'carrierwave'
+
+group :test do
+  # Cucumber Rails 3
+  gem 'capybara'
+  gem 'database_cleaner'
+  gem 'cucumber-rails'
+  gem 'cucumber'
+  gem 'spork'
+  gem 'launchy'
+
+  gem 'pickler'
+  gem 'webrat'
+  gem "rspec", "~> 2.1"
+  gem "rspec-rails", "~> 2.1"
+  gem "factory_girl", "~> 1.3"
+  gem 'autotest'
+end
