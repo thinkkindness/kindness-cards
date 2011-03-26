@@ -59,8 +59,6 @@ GEM
     celerity (0.8.8)
     childprocess (0.1.8)
       ffi (~> 1.0.6)
-    compass (0.10.6)
-      haml (>= 3.0.4)
     configuration (1.2.0)
     crack (0.1.8)
     cucumber (0.10.2)
@@ -169,7 +167,6 @@ DEPENDENCIES
   bson_ext (~> 1.1)
   cancan (~> 1.5)
   capybara
-  compass
   cucumber
   cucumber-rails
   database_cleaner

@@ -14,7 +14,7 @@ gem 'cancan', '~> 1.5'
 
 # Other
 gem 'haml'
-gem 'compass'
+# gem 'compass'
 # gem 'pusher'
 # gem 'carrierwave'
 
