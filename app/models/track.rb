@@ -8,7 +8,7 @@ class Track
   field :location
   field :message
 
-  validates_presence_of :card_id, :location, :message => "can't be blank"
+  validates_presence_of :card_id
 
   def card
     Card.find(card_id.to_s)
