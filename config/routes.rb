@@ -1,7 +1,11 @@
 Kindness::Application.routes.draw do
   devise_for :users
-  match '/search' => 'main#search'
-  root :to => "main#index"
+  
+  # our card urls
+  match '/card/:uid/act' => 'card#act', :as => :act
+  match '/card/find' => 'card#find'
+  match '/' => 'card#find', :as => :find
+  root :to => "card#find"
   
   # The priority is based upon order of creation:
   # first created -> highest priority.
