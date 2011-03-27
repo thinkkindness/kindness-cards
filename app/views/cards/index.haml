@@ -1,3 +1,5 @@
 %h1 Cards
+
+%ul
 - @cards.each do |card|
-  = link_to card.serial_number, card
+  %li= link_to card.serial_number, card
