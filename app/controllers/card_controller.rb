@@ -15,7 +15,14 @@ class CardController < ApplicationController
 
   def act
     find_card(params[:uid])
-    render :text => "Found card #{@card.uid}"
+
+    if @card.has_acts?
+      # render add a new act
+      render :text => "Found card #{@card.uid} - NEW ACT"
+    else
+      # render the first act
+      render :text => "Found card #{@card.uid} - FIRST ACT"
+    end
   end
 
   private

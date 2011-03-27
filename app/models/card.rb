@@ -2,6 +2,6 @@ class Card < ActiveRecord::Base
   has_many :acts
   
   def has_acts?
-    acts.present?
+    acts.count > 0
   end
 end
