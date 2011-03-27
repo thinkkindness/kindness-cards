@@ -4,7 +4,6 @@ gem 'rails', '~> 3.0'
 
 # Database
 gem "mongoid", "~> 2.0.0.rc", :git => 'git://github.com/mongoid/mongoid.git'
-#gem "syck" # required by mongoid, but not declared
 gem "bson_ext", "~> 1.1"
 
 # Authentication
