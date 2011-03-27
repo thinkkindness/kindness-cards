@@ -4,7 +4,7 @@ class CardsController < ApplicationController
 
     respond_to do |format|
       format.html
-      format.xml  { render :xml => @cards }
+      format.json  { render :json => @cards }
     end
   end
 
@@ -14,7 +14,7 @@ class CardsController < ApplicationController
 
     respond_to do |format|
       format.html
-      format.xml  { render :xml => @card }
+      format.json  { render :json => @card }
     end
   end
 
@@ -23,7 +23,7 @@ class CardsController < ApplicationController
 
     respond_to do |format|
       format.html
-      format.xml  { render :xml => @card }
+      format.json  { render :json => @card }
     end
   end
 
@@ -33,10 +33,10 @@ class CardsController < ApplicationController
     respond_to do |format|
       if @card.save
         format.html { redirect_to(@card, :notice => 'Card was successfully created.') }
-        format.xml  { render :xml => @card, :status => :created, :location => @card }
+        format.json  { render :json => @card, :status => :created, :location => @card }
       else
         format.html { render :action => "new" }
-        format.xml  { render :xml => @card.errors, :status => :unprocessable_entity }
+        format.json  { render :json => @card.errors, :status => :unprocessable_entity }
       end
     end
   end
@@ -47,9 +47,9 @@ class CardsController < ApplicationController
     respond_to do |format|
       if @card.update_attributes(params[:card])
         format.html { redirect_to(@card, :notice => 'Card was successfully updated.') }
-        format.xml  { head :ok }
+        format.json  { head :ok }
       else
-        format.xml  { render :xml => @card.errors, :status => :unprocessable_entity }
+        format.json  { render :json => @card.errors, :status => :unprocessable_entity }
       end
     end
   end
@@ -60,7 +60,7 @@ class CardsController < ApplicationController
 
     respond_to do |format|
       format.html { redirect_to(cards_url) }
-      format.xml  { head :ok }
+      format.json  { head :ok }
     end
   end
 end

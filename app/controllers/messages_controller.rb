@@ -4,7 +4,7 @@ class MessagesController < ApplicationController
 
     respond_to do |format|
       format.html
-      format.xml  { render :xml => @messages }
+      format.json  { render :json => @messages }
     end
   end
 
@@ -13,7 +13,7 @@ class MessagesController < ApplicationController
 
     respond_to do |format|
       format.html
-      format.xml  { render :xml => @message }
+      format.json  { render :json => @message }
     end
   end
 
@@ -22,7 +22,7 @@ class MessagesController < ApplicationController
 
     respond_to do |format|
       format.html
-      format.xml  { render :xml => @message }
+      format.json  { render :json => @message }
     end
   end
 
@@ -36,10 +36,10 @@ class MessagesController < ApplicationController
     respond_to do |format|
       if @message.save
         format.html { redirect_to(@message, :notice => 'Message was successfully created.') }
-        format.xml  { render :xml => @message, :status => :created, :location => @message }
+        format.json  { render :json => @message, :status => :created, :location => @message }
       else
         format.html { render :action => "new" }
-        format.xml  { render :xml => @message.errors, :status => :unprocessable_entity }
+        format.json  { render :json => @message.errors, :status => :unprocessable_entity }
       end
     end
   end
@@ -50,10 +50,10 @@ class MessagesController < ApplicationController
     respond_to do |format|
       if @message.update_attributes(params[:message])
         format.html { redirect_to(@message, :notice => 'Message was successfully updated.') }
-        format.xml  { head :ok }
+        format.json  { head :ok }
       else
         format.html { render :action => "edit" }
-        format.xml  { render :xml => @message.errors, :status => :unprocessable_entity }
+        format.json  { render :json => @message.errors, :status => :unprocessable_entity }
       end
     end
   end
@@ -64,7 +64,7 @@ class MessagesController < ApplicationController
 
     respond_to do |format|
       format.html { redirect_to(messages_url) }
-      format.xml  { head :ok }
+      format.json  { head :ok }
     end
   end
 end
