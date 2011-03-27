@@ -10,9 +10,8 @@ KindnessCard::Application.routes.draw do
   resources :tracks do
     resources :messages
   end
-  
-  resources :learns
-  match '/learn' => 'learns#index'
+
+  match '/learn' => 'pages#learn'
 
   match '/:id' => 'tracks#new'
   match '/:id/messages' => 'messages#new'
