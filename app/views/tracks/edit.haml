@@ -2,7 +2,7 @@
   %p.center
     %label Your Message
     %br
-    = f.text_field :message, :value => params[:id], :size => 10
+    = f.text_area :message, :cols => 60, :rows => 4
 
   %p.center
     %input{ :type => :submit }
