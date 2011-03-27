@@ -1,6 +1,8 @@
-Card:
-= link_to @card, @card
-%br
+- if @card
+  Card:
+  = link_to @card, @card
+  %br
+
 Time: #{@track.created_at}
 %br
 Location: #{@track.location}
