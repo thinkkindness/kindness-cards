@@ -19,6 +19,9 @@ class TracksController < ApplicationController
   end
 
   def new
+    if params[:card_id]
+      @card = Card.where(:serial_number => params[:card_id]).first
+    end
     @track = Track.new
 
     respond_to do |format|
@@ -44,9 +47,11 @@ class TracksController < ApplicationController
 
   def edit
     @track = Track.find(params[:id])
+    @card = @track.card
   end
 
   def update
+    # TODO: a Track has an owner by now, and should only be editable by them
     @track = Track.find(params[:id])
 
     respond_to do |format|
