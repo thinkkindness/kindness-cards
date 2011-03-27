@@ -4,17 +4,17 @@ class Card
 
   identity :type => String
 
-  field :serial_number, :required => true
+  field :serial_number
   index :serial_number, :unique => true
+
+  validates_presence_of :serial_number, :on => :create, :message => "can't be blank"
 
   def to_s
     "#{serial_number}"
   end
 
-  private
-
-  def generate_id_from_serial_number
-    self.id = serial_number.gsub(/[^A-Z0-9]/,'').squeeze('').gsub(/^\-|\-$/,'')
+  def tracks
+    Track.where(:card_id => id)
   end
 
 end
