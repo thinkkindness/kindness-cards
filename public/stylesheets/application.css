@@ -2,3 +2,6 @@ html{height:100%;margin:0;padding:0;background:#bdf;}
 body{width:640px;height:100%;margin:0 auto;border-left:solid 1px black;border-right:solid 1px black;background:white;}
 header{background:rgba(100,199,255,0.15);padding:25px;}
 header h1{margin:0;text-align:center;font-size:36pt;}
+.gravatar{margin:0 5px;}
+.float_left{float:left;}
+.float_right{float:right;}

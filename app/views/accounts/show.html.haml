@@ -1,3 +1,21 @@
 %p#notice= notice
 
+- if @account.logo
+  .float_right #{ image_tag @account.logo, :alt => 'Logo' }
+
+- if @account.email
+  .gravatar.float_left= gravatar_for @account
+
 %h1 #{@account.name}
+
+- if @account.phone
+  %p
+    #{@account.phone}
+
+%p
+  #{@account.street}
+  %br
+  #{@account.city}, #{@account.state}
+  %br
+  #{@account.zip}
+
