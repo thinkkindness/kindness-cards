@@ -25,7 +25,8 @@ class TracksController < ApplicationController
   # GET /tracks/new
   # GET /tracks/new.json
   def new
-    @track = Track.new
+    @card = Card.where(:serial_number => params[:card_id]).first
+    @track = Track.new(:card_id => @card.serial_number)
 
     respond_to do |format|
       format.html # new.html.erb
