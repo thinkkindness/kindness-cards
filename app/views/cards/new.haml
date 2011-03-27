@@ -1,0 +1,6 @@
+- form_for @card do |f|
+  %p
+    %label Card Number:
+    = f.text_field :serial_number, :value => params[:id]
+
+  %input{ :type => :submit }
