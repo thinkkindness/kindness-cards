@@ -1,13 +1,10 @@
-class Card
-  include Mongoid::Document
-  include Mongoid::Timestamps
+class Card < ActiveRecord::Base
 
-  identity :type => String
+  validates_uniqueness_of :serial_number
 
-  field :serial_number
-  index :serial_number, :unique => true
+  validates_presence_of :serial_number, :message => "can't be blank"
 
-  validates_presence_of :serial_number, :on => :create, :message => "can't be blank"
+  has_many :tracks
 
   def to_param
     "#{serial_number.parameterize}"
@@ -15,10 +12,6 @@ class Card
 
   def to_s
     "#{serial_number}"
-  end
-
-  def tracks
-    Track.where(:card_id => id)
   end
 
 end
