@@ -14,9 +14,6 @@ gem 'cancan', '~> 1.5'
 
 # Other
 gem 'haml'
-# gem 'compass'
-# gem 'pusher'
-# gem 'carrierwave'
 
 group :test do
   # Cucumber Rails 3
