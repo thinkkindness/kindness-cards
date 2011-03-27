@@ -2,16 +2,20 @@
 
 <table>
   <tr>
-    <th></th>
-    <th></th>
-    <th></th>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Actions</th>
   </tr>
 
 <% @accounts.each do |account| %>
   <tr>
-    <td><%= link_to 'Show', account %></td>
-    <td><%= link_to 'Edit', edit_account_path(account) %></td>
-    <td><%= link_to 'Destroy', account, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= account.name %></td>
+    <td><%= account.email %></td>
+    <td>
+      <%= link_to 'Show', account %>
+      <%= link_to 'Edit', edit_account_path(account) %>
+      <%= link_to 'Destroy', account, :confirm => 'Are you sure?', :method => :delete %>
+    </td>
   </tr>
 <% end %>
 </table>
