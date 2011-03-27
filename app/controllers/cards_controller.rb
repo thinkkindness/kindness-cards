@@ -28,7 +28,7 @@ class CardsController < ApplicationController
   end
 
   def edit
-    @card = Card.find(params[:id])
+    @card = Card.where(:serial_number => params[:id]).first
   end
 
   def create
