@@ -6,3 +6,5 @@
     = f.text_field :location
 
   %input{ :type => :submit }
+
+%p=account_signed_in? ? current_account.email : 'not logged in'

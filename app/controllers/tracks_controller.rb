@@ -25,6 +25,7 @@ class TracksController < ApplicationController
   # GET /tracks/new
   # GET /tracks/new.json
   def new
+		puts session.inspect
     @track = Track.new
 
     respond_to do |format|
