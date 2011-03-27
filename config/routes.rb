@@ -12,6 +12,7 @@ KindnessCard::Application.routes.draw do
   end
 
   match '/learn' => 'pages#learn'
+  match '/home' => 'pages#home'
 
   match '/:id' => 'tracks#new'
   match '/:id/messages' => 'messages#new'
