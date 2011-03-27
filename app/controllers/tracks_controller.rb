@@ -19,8 +19,7 @@ class TracksController < ApplicationController
   end
 
   def new
-    @card = Card.where(:serial_number => params[:card_id]).first
-    @track = Track.new(:card_id => @card.serial_number)
+    @track = Track.new
 
     respond_to do |format|
       format.html
