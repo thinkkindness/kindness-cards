@@ -2,7 +2,7 @@ class Card
   include Mongoid::Document
   include Mongoid::Timestamps
 
-  references_many :tracks, :inverse_of => :cards
+  identity :type => String
 
   field :serial_number, :required => true
   index :serial_number, :unique => true
