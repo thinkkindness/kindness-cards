@@ -9,7 +9,7 @@ class CardsController < ApplicationController
   end
 
   def show
-    @card = Card.find(params[:id])
+    @card = Card.where(:serial_number => params[:id]).first
     @tracks = @card.tracks
 
     respond_to do |format|
