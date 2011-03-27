@@ -14,6 +14,7 @@ class CardsController < ApplicationController
   # GET /cards/1.xml
   def show
     @card = Card.where(:serial_number => params[:id]).first
+    @tracks = @card.tracks
 
     respond_to do |format|
       format.html # show.html.erb
