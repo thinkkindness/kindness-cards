@@ -4,4 +4,6 @@ class Track < ActiveRecord::Base
 
   validates_presence_of :card_id, :location, :message => "can't be blank"
 
+  attr_accessor :serial_number # REMOVE ME
+
 end
