@@ -32,14 +32,15 @@ class TracksController < ApplicationController
   end
 
   def create
+    @card = Card.where(:serial_number => params[:serial_number])
     @track = Track.new(params[:track])
 
     respond_to do |format|
       if @track.save
-        format.html { redirect_to(@track, :notice => 'Track was successfully created.') }
+        format.html { redirect_to edit_track_path(@track.id) }
         format.json  { render :json => @track, :status => :created, :location => @track }
       else
-        format.html { render :action => "new" }
+        format.html { render :action => "new", :flash => "Didn't save!" }
         format.json  { render :json => @track.errors, :status => :unprocessable_entity }
       end
     end
