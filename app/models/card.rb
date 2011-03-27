@@ -7,6 +7,10 @@ class Card
   field :serial_number, :required => true
   index :serial_number, :unique => true
 
+  def to_s
+    "#{serial_number}"
+  end
+
   private
 
   def generate_id_from_serial_number
