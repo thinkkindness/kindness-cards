@@ -31,14 +31,8 @@ class TracksController < ApplicationController
   end
 
   def create
-      @card = Card.where(:serial_number => params[:track][:serial_number]).first
-    if @card
-      @track = @card.tracks.build(params[:track])
-    else
-      flash[:alert] = 'Please provide a valid card number!'
-      redirect_to '/'
-      return
-    end
+    @card = Card.where(:serial_number => params[:track][:serial_number]).first
+    @track = @card.tracks.build(params[:track])
 
     respond_to do |format|
       if @track.save
