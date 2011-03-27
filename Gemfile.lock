@@ -136,6 +136,7 @@ GEM
       json_pure
       rubyzip
     term-ansicolor (1.0.5)
+    test-unit (2.2.0)
     thor (0.14.6)
     treetop (1.4.9)
       polyglot (>= 0.3.1)
@@ -166,3 +167,4 @@ DEPENDENCIES
   pg
   rails (= 3.0.5)
   sass
+  test-unit

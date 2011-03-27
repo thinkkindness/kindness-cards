@@ -1,6 +1,6 @@
 Kindness::Application.routes.draw do
   devise_for :users
-  
+  match '/search' => 'main#search'
   root :to => "main#index"
   
   # The priority is based upon order of creation:
