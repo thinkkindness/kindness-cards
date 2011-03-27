@@ -7,11 +7,27 @@
         - @account.errors.full_messages.each do |msg|
           %li= msg
 
-  %p= f.text_field :name
-  %p= f.text_field :phone
-  %p= f.text_field :street
-  %p= f.text_field :state
-  %p= f.text_field :zip
+  %p
+    = f.label :name
+    = f.text_field :name
+  %p
+    = f.label :email
+    = f.text_field :email
+  %p
+    = f.label :phone
+    = f.text_field :phone
+  %p
+    = f.label :street
+    = f.text_field :street
+  %p
+    = f.label :city
+    = f.text_field :city
+  %p
+    = f.label :state
+    = f.text_field :state
+  %p
+    = f.label :zip
+    = f.text_field :zip
 
   .actions
     = f.submit
