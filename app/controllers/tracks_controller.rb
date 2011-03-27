@@ -14,6 +14,7 @@ class TracksController < ApplicationController
   # GET /tracks/1.json
   def show
     @track = Track.find(params[:id])
+    @card = @track.card
 
     respond_to do |format|
       format.html # show.html.erb
