@@ -49,7 +49,6 @@ class CardsController < ApplicationController
         format.html { redirect_to(@card, :notice => 'Card was successfully updated.') }
         format.xml  { head :ok }
       else
-        format.html { render :action => "edit" }
         format.xml  { render :xml => @card.errors, :status => :unprocessable_entity }
       end
     end

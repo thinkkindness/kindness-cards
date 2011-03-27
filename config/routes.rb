@@ -3,7 +3,7 @@ KindnessCard::Application.routes.draw do
   devise_for :accounts
   resources :accounts, :only => :show
 
-  resources :cards do
+  resources :cards, :except => [:edit] do
     resources :tracks
   end
 
