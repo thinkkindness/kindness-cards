@@ -28,8 +28,8 @@ class TracksController < ApplicationController
   end
 
   def create
-    @card = Card.where(:serial_number => params[:serial_number])
-    @track = Track.new(params[:track])
+    @card = Card.where(:serial_number => params[:track][:serial_number]).first
+    @track = @card.tracks.build(params[:track])
 
     respond_to do |format|
       if @track.save
