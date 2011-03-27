@@ -7,15 +7,7 @@ class Account < ActiveRecord::Base
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me
 
-  field :name
-  field :phone
-  field :street
-  field :city
-  field :state
-  field :zip
-  field :logo
-
   validates_presence_of :name
-  attr_accessible :name, :email, :password, :password_confirmation, :remember_me, :street, :city, :state, :zip, :logo
+  attr_accessible :name, :street, :city, :state, :zip, :logo
 
 end
