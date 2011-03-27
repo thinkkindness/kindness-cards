@@ -1,1 +1,6 @@
+= link_to 'add track', new_card_track_path(@card)
+
 = @card
+
+%h2 tracks
+= render :partial => 'tracks/index'
