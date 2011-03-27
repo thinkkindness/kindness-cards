@@ -7,4 +7,4 @@ test:
   database: kindness_card_test
 
 production:
-  uri: mongodb://heroku:ab2h1okrodke2931ahwz2q@flame.mongohq.com:27094/app482517
+  uri: <%= ENV['MONGOHQ_URL'] %>
