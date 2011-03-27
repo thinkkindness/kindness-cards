@@ -1,9 +1,0 @@
-development:
-  host: localhost
-  database: kindness_card_development
-
-test:
-  host: localhost
-  database: kindness_card_test
-
-production:
