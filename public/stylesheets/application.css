@@ -1,5 +1,5 @@
 html{height:100%;margin:0;padding:0;background:#bdf url(/clouds.jpg) no-repeat center center;background-size: 100%;}
-body{width:600px;height:100%;margin:0 auto;border-left:solid 1px black;border-right:solid 1px black;}
+body{width:600px;height:100%;margin:0 auto;background:transparent;border-left:solid 1px black;border-right:solid 1px black;}
 header{margin:0;background:rgba(0,0,0,0.4);padding:25px;color:white;}
 header h1{margin:0;text-align:center;font-size:36pt;}
 .content{background:white;height:100%;padding:10px;margin:0;}
