@@ -1,45 +1,36 @@
 class CardsController < ApplicationController
-  # GET /cards
-  # GET /cards.xml
   def index
     @cards = Card.all
 
     respond_to do |format|
-      format.html # index.html.erb
+      format.html
       format.xml  { render :xml => @cards }
     end
   end
 
-  # GET /cards/1
-  # GET /cards/1.xml
   def show
     @card = Card.where(:serial_number => params[:id]).first
     @tracks = @card.tracks
 
     respond_to do |format|
-      format.html # show.html.erb
+      format.html
       format.xml  { render :xml => @card }
     end
   end
 
-  # GET /cards/new
-  # GET /cards/new.xml
   def new
     @card = Card.new
 
     respond_to do |format|
-      format.html # new.html.erb
+      format.html
       format.xml  { render :xml => @card }
     end
   end
 
-  # GET /cards/1/edit
   def edit
     @card = Card.find(params[:id])
   end
 
-  # POST /cards
-  # POST /cards.xml
   def create
     @card = Card.new(params[:card])
 
@@ -54,8 +45,6 @@ class CardsController < ApplicationController
     end
   end
 
-  # PUT /cards/1
-  # PUT /cards/1.xml
   def update
     @card = Card.find(params[:id])
 
@@ -70,8 +59,6 @@ class CardsController < ApplicationController
     end
   end
 
-  # DELETE /cards/1
-  # DELETE /cards/1.xml
   def destroy
     @card = Card.find(params[:id])
     @card.destroy
