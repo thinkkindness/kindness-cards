@@ -1,46 +1,37 @@
 class TracksController < ApplicationController
-  # GET /tracks
-  # GET /tracks.json
   def index
     @tracks = Track.all
 
     respond_to do |format|
-      format.html # index.html.erb
+      format.html
       format.json  { render :json => @tracks }
     end
   end
 
-  # GET /tracks/1
-  # GET /tracks/1.json
   def show
     @track = Track.find(params[:id])
     @card = @track.card
 
     respond_to do |format|
-      format.html # show.html.erb
+      format.html
       format.json  { render :json => @track }
     end
   end
 
-  # GET /tracks/new
-  # GET /tracks/new.json
   def new
     @card = Card.where(:serial_number => params[:card_id]).first
     @track = Track.new(:card_id => @card.serial_number)
 
     respond_to do |format|
-      format.html # new.html.erb
+      format.html
       format.json  { render :json => @track }
     end
   end
 
-  # GET /tracks/1/edit
   def edit
     @track = Track.find(params[:id])
   end
 
-  # POST /tracks
-  # POST /tracks.json
   def create
     @track = Track.new(params[:track])
 
@@ -55,8 +46,6 @@ class TracksController < ApplicationController
     end
   end
 
-  # PUT /tracks/1
-  # PUT /tracks/1.json
   def update
     @track = Track.find(params[:id])
 
@@ -71,8 +60,6 @@ class TracksController < ApplicationController
     end
   end
 
-  # DELETE /tracks/1
-  # DELETE /tracks/1.json
   def destroy
     @track = Track.find(params[:id])
     @track.destroy
