@@ -6,6 +6,14 @@ class Account
          :recoverable, :rememberable, :trackable, :validatable
 
   field :name
+  field :phone
+  field :street
+  field :city
+  field :state
+  field :zip
+  field :logo
+
   validates_presence_of :name
-  attr_accessible :name, :email, :password, :password_confirmation, :remember_me
+  attr_accessible :name, :email, :password, :password_confirmation, :remember_me, :street, :city, :state, :zip, :logo
+
 end
