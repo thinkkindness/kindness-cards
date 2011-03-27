@@ -8,3 +8,8 @@ end
 Factory.define :card do |f|
   f.sequence(:uid) { |n| "#{n}" }
 end
+
+Factory.define :act do |f|
+  f.association :card
+  f.description 'This is some act of kindness.'
+end
