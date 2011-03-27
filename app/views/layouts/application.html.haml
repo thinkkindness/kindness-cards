@@ -6,10 +6,9 @@
     = javascript_include_tag :defaults
     = csrf_meta_tag
   %body
-  %header
-    %h1 Think Kindness
-
-  %ul.hmenu
-    - flash.each do |name, msg|
-      = content_tag :div, msg, :id => "flash_#{name}" if msg.is_a?(String)
-    = yield
+    %header
+      %h1 Think Kindness
+    %ul.hmenu
+      - flash.each do |name, msg|
+        = content_tag :div, msg, :id => "flash_#{name}" if msg.is_a?(String)
+      = yield
