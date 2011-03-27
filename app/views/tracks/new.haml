@@ -1,10 +1,13 @@
-- form_for @track do |f|
-  %p
-    %label Card Number:
-    = f.text_field :card_id
-    %label Location:
-    = f.text_field :location
+- form_for @track, :html => { :class => [:fancy] } do |f|
+  %p.center
+    %label Your Card Number
+    %br
+    = f.text_field :serial, :value => params[:id], :size => 10
 
-  %input{ :type => :submit }
+  %p.center
+    %label Card Location
+    %br
+    = f.text_field :location, :size => 15
 
-%p=account_signed_in? ? current_account.email : 'not logged in'
+  %p.center
+    %input{ :type => :submit }
