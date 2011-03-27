@@ -11,7 +11,7 @@ class Track
   validates_presence_of :card_id, :location, :message => "can't be blank"
 
   def card
-    Card.where(:id => card_id)
+    Card.find(card_id)
   end
 
 end

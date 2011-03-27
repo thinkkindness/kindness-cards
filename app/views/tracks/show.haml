@@ -1,6 +1,6 @@
-- if @card
+- unless @card.blank?
   Card:
-  = link_to @card, @card
+  = link_to @card.serial_number, @card
   %br
 
 Time: #{@track.created_at}

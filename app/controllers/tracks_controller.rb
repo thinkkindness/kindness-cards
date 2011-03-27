@@ -57,7 +57,7 @@ class TracksController < ApplicationController
 
     respond_to do |format|
       if @track.update_attributes(params[:track])
-        format.html { redirect_to(@track, :notice => 'Track was successfully updated.') }
+        format.html { redirect_to(card_path(@card.id), :notice => 'Track was successfully updated.') }
         format.json  { head :ok }
       else
         format.html { render :action => "edit" }
