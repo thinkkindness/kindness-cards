@@ -3,7 +3,7 @@ require 'test_helper'
 class UserTest < ActiveSupport::TestCase
   
   def setup
-    @user = Factory.create(:user)
+    @user = Factory(:user)
   end
   
   def test_user_name

@@ -10,7 +10,15 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110327150513) do
+ActiveRecord::Schema.define(:version => 20110327160111) do
+
+  create_table "cards", :force => true do |t|
+    t.string   "uid"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "cards", ["uid"], :name => "index_cards_on_uid", :unique => true
 
   create_table "users", :force => true do |t|
     t.string   "name"

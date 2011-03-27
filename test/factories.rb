@@ -4,3 +4,7 @@ Factory.define :user do |f|
   f.password 'password'
   f.password_confirmation 'password'
 end
+
+Factory.define :card do |f|
+  f.sequence(:uid) { |n| "#{n}" }
+end
