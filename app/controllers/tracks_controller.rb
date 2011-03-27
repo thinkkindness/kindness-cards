@@ -27,10 +27,6 @@ class TracksController < ApplicationController
     end
   end
 
-  def edit
-    @track = Track.find(params[:id])
-  end
-
   def create
     @card = Card.where(:serial_number => params[:serial_number])
     @track = Track.new(params[:track])
@@ -44,6 +40,10 @@ class TracksController < ApplicationController
         format.json  { render :json => @track.errors, :status => :unprocessable_entity }
       end
     end
+  end
+
+  def edit
+    @track = Track.find(params[:id])
   end
 
   def update
