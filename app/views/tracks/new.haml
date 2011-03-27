@@ -1,6 +1,6 @@
 - form_for @track do |f|
   %p
     %label Location:
-    = f.text_field :location
+    = f.text_field :location, :value => params[:id]
 
   %input{ :type => :submit }
