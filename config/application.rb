@@ -1,11 +1,6 @@
 require File.expand_path('../boot', __FILE__)
 
-# Pick the frameworks you want:
-# require "active_record/railtie"
-require "action_controller/railtie"
-require "action_mailer/railtie"
-require "active_resource/railtie"
-# require 'rails/test_unit/railtie'
+require 'rails/all'
 
 Bundler.require(:default, Rails.env) if defined?(Bundler)
 
@@ -24,7 +19,7 @@ module KindnessCard
     config.filter_parameters += [:password, :password_confirmation]
 
     config.generators do |g|
-      g.orm             :mongoid
+      g.orm             :active_record
       g.template_engine :haml
       g.test_framework  :rspec, :fixture => true, :views => false
       g.fixture_replacement :factory_girl, :dir => "spec/factories"
