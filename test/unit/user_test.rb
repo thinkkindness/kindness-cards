@@ -2,26 +2,18 @@ require 'test_helper'
 
 class UserTest < ActiveSupport::TestCase
   
-  describe "A user instance" do
-    
-     before do
-      @user = Factory(:user)
-    end
-    
-    it "must have a name" do
-      @user.must_respond_to :name
-      @user.name.must_equal "Test User 1"
-    end
-    
-    it "must have an email" do
-      @user.must_respond_to :email
-      @user.email.must_equal "test-user1@example.com"
-    end
-    
-    it "must do something else" do
-      @user.must_respond_to :blah
-    end
-    
+  def setup
+    @user = Factory.create(:user)
+  end
+  
+  def test_user_name
+    assert_respond_to @user, :name
+    assert_match /Test User/, @user.name
+  end
+
+  def test_user_email
+    assert_respond_to @user, :email
+    assert_match /test-user.@example.com/, @user.email
   end
   
 end

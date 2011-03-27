@@ -96,14 +96,6 @@ GEM
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
     mime-types (1.16)
-    mini_backtrace (0.1.1)
-      minitest (> 1.2.0)
-      rails (> 2.3.2)
-    mini_shoulda (0.2.0)
-      minitest (~> 2.0.2)
-    mini_specunit (0.1.1)
-      minitest
-    minitest (2.0.2)
     nokogiri (1.4.4)
     orm_adapter (0.0.4)
     pg (0.10.1)
@@ -159,10 +151,6 @@ DEPENDENCIES
   haml (>= 3.0.0)
   haml-rails
   inherited_resources
-  mini_backtrace
-  mini_shoulda
-  mini_specunit
-  minitest
   pg
   rails (= 3.0.5)
   sass
