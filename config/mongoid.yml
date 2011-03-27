@@ -13,6 +13,3 @@ development:
 test:
   <<: *defaults
   database: kindness_card_test
-
-production:
-  uri: <%= ENV['MONGOHQ_URL'] %>
