@@ -1,18 +1,7 @@
-defaults: &defaults
-  host: localhost
-  # slaves:
-  #   - host: slave1.local
-  #     port: 27018
-  #   - host: slave2.local
-  #     port: 27019
-
 development:
-  <<: *defaults
+  host: localhost
   database: kindness_card_development
 
 test:
-  <<: *defaults
+  host: localhost
   database: kindness_card_test
-
-production:
-  uri: <%= ENV['MONGOHQ_URL'] %>
