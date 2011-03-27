@@ -9,6 +9,10 @@ class Card
 
   validates_presence_of :serial_number, :on => :create, :message => "can't be blank"
 
+  def to_param
+    "#{serial_number.parameterize}"
+  end
+
   def to_s
     "#{serial_number}"
   end
