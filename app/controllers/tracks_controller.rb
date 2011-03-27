@@ -53,6 +53,7 @@ class TracksController < ApplicationController
   def update
     # TODO: a Track has an owner by now, and should only be editable by them
     @track = Track.find(params[:id])
+    @card = @track.card
 
     respond_to do |format|
       if @track.update_attributes(params[:track])
