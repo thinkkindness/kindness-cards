@@ -1,9 +1,6 @@
-= form_for tracks_path do
-  %p
-    %label Card Serial Number:
-    %input{ :type => :text, :name => :serial_number }
+- form_for @track do |f|
   %p
     %label Location:
-    %input{ :type => :text, :name => :location }
+    = f.text_field :location
 
   %input{ :type => :submit }
