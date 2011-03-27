@@ -3,7 +3,9 @@ KindnessCard::Application.routes.draw do
   devise_for :accounts
   resources :accounts, :only => :show
 
-  resources :cards
+  resources :cards do
+    resources :tracks
+  end
 
   resources :tracks do
     resources :messages
