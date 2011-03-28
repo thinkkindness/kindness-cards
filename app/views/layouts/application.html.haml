@@ -7,17 +7,20 @@
     = stylesheet_link_tag 'typography', 'globals'
     = javascript_include_tag 'jquery','modernizr-1.7.min.js','rails','application'
     = csrf_meta_tag
+
   %body
     %span.header-shadow &nbsp;
     #wrapper
       #header
         = image_tag 'card-logo.png', :width => 270, :height => 47, :class => 'card-logo'
         = link_to image_tag('tk-logo.png', :width => 140, :height => 33, :class => 'tk-logo'), 'http://www.thinkkindness.org'
+
       #content
         - if flash.count > 0
           %ul.flash_messages
             - flash.each do |name, msg|
               = content_tag :div, msg, :id => "flash_#{name}" if msg.is_a?(String)
+
         = yield
 
     #footer
