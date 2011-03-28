@@ -15,14 +15,28 @@ class CardController < ApplicationController
 
   def act
     find_card(params[:uid])
-
-    if @card.has_acts?
-      render :action => "new_act"
-    else
-      render :action => "first_act"
-    end
+    @act = @card.acts.new
+    render :action => @card.has_acts? ? "new_act" : "first_act"
   end
 
+  def create_act
+    if params[:act]
+      if Card.find(params[:act][:card_id])
+        act = Act.create(params[:act])
+        redirect_to show_card_url(act.card.uid)
+      else
+        flash[:error] = "We don't have a card with number #{params[:act][:card_id]}."
+        redirect_to root_url
+      end
+    else
+      redirect_to root_url
+    end
+  end
+  
+  def show
+    find_card(params[:uid])
+  end
+  
   private
 
     def find_card(uid)

@@ -1,9 +1,11 @@
 Kindness::Application.routes.draw do
   devise_for :users
-  
+
   # our card urls
+  match '/card/create_act' => 'card#create_act', :as => :create_act
   match '/card/:uid/act' => 'card#act', :as => :act
   match '/card/find' => 'card#find'
+  match '/card/:uid' => 'card#show', :as => :show_card
   match '/' => 'card#find', :as => :find
   root :to => "card#find"
   

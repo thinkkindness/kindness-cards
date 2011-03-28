@@ -1,0 +1,6 @@
+= semantic_form_for @act, :url => :create_act do |f|
+  = f.inputs do
+    = f.input :description, :as => :text, :input_html => { :rows => 3, :cols => 50, :maxlength => 140  }
+    = f.input :card_id, :as => :hidden
+  = f.buttons do
+    = f.commit_button
