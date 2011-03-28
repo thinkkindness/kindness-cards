@@ -2,4 +2,4 @@
 
 %ul
 - @cards.each do |card|
-  %li= link_to card.serial_number, card
+  %li= link_to card.serial_number, card_path(card)

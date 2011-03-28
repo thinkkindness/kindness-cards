@@ -4,11 +4,8 @@ class Card < ActiveRecord::Base
 
   validates_presence_of :serial_number, :message => "can't be blank"
 
+  belongs_to :accounts
   has_many :tracks
-
-  def to_param
-    "#{serial_number.parameterize}"
-  end
 
   def to_s
     "#{serial_number}"
