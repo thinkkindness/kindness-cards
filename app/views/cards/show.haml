@@ -1,9 +1,7 @@
-= link_to 'Account Owner', @account
-|
-= link_to 'add track', new_card_track_path(@card)
+- if signed_in?
+  = link_to 'Account Owner', @account
+  |
+  = link_to 'add track', new_card_track_path(@card)
 
-%h1 Cards
-= @card
-
-%h2 tracks
+%h1 Acts of Kindness For Card ##{@card.serial_number}
 = render :partial => 'tracks/index'

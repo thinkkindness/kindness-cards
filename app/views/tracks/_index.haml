@@ -1,3 +1,5 @@
-%ul
+%ul.tracks
   - @tracks.each do |track|
-    %li= link_to track.location, track
+    %li
+      %span.location In: #{track.location}
+      %span.message #{track.message}
