@@ -12,8 +12,8 @@ KindnessCard::Application.routes.draw do
   match '/learn' => 'pages#learn'
   match '/home' => 'pages#home'
 
-  # match '/:id' => 'tracks#new'
-  # match '/:id/messages' => 'messages#new'
+  match '/:serial_number' => 'tracks#new'
+  match '/:serial_number/messages' => 'messages#new'
 
   root :to => "tracks#new"
 

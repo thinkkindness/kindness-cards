@@ -19,7 +19,7 @@ class TracksController < ApplicationController
   end
 
   def new
-    @card = Card.find(params[:card_id])
+    @card = Card.find_by_serial_number(params[:serial_number])
     @track = Track.new
 
     respond_to do |format|
