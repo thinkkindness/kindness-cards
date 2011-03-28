@@ -17,4 +17,11 @@
       = yield
 
   .footer
-    %a{ :href => "#{root_url}" } Back to main page  
+    = link_to "Back to main page", root_url
+    - if user_signed_in?
+      .signed_in 
+        Signed in as #{current_user.name}
+      = link_to "Sign out", sign_out_url
+    - else
+      = link_to "Sign in", sign_in_url
+      = link_to "Register", register_url
