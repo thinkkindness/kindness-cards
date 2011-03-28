@@ -21,10 +21,10 @@ class TracksController < ApplicationController
   def new
     if params[:serial_number]
       @card = Card.find_by_serial_number(params[:serial_number])
-    elsif params[:card_id].to_i == 0
-      @card = Card.find_by_serial_number(params[:card_id])
-    elsif params[:card_id].to_i != 0
-      @card = Card.find(params[:card_id])
+    elsif params[:card_id]
+      unless @card = Card.find_by_serial_number(params[:card_id])
+        @card = Card.find(params[:card_id]) if params[:card_id].to_i != 0
+      end
     end
     @track = Track.new
 
