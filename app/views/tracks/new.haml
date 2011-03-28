@@ -1,16 +1,16 @@
+%h1 Add a story to your kindness card
+
 - form_for @track, :html => { :class => [:fancy] } do |f|
 
   = f.hidden_field :card_id, :value => @card.try(:id)
 
-  %p.center
+  .form-col
     %label Your Card Number
-    %br
     = f.text_field :serial_number, :value => @card.try(:serial_number), :size => 10
 
-  %p.center
+  .form-col.last
     %label Card Location
-    %br
     = f.text_field :location, :size => 15
 
   %p.center
-    %input{ :type => :submit }
+    %input.submit-btn{ :type => :submit, :value => 'Continue &#187' }

@@ -15,7 +15,7 @@
         = image_tag 'card-logo.png', :width => 270, :height => 47, :class => 'card-logo'
         = link_to image_tag('tk-logo.png', :width => 140, :height => 33, :class => 'tk-logo'), 'http://www.thinkkindness.org'
 
-      #content
+      #content.group
         - if flash.count > 0
           %ul.flash_messages
             - flash.each do |name, msg|
