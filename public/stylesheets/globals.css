@@ -330,7 +330,7 @@ ul.tracks li .time{display:inline-block;float:right;color:#58f;padding:0 5px 5px
 ul.tracks li .message{display:block;font-size:16pt;padding:15px;}
 
 /* App styles */
-.content ul.flash_messages{background:red;color:white;padding:10px;margin:-10px -10px 10px -10px;}
+ul.flash_messages{background:#479;color:white;padding:10px;margin:-10px -10px 10px -10px;border-radius:4px;}
 .gravatar{margin:0 5px;}
 .float_left{float:left;}
 .float_right{float:right;}
