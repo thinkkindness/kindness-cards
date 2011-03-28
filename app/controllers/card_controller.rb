@@ -22,7 +22,9 @@ class CardController < ApplicationController
   def create_act
     if params[:act]
       if Card.find(params[:act][:card_id])
-        act = Act.create(params[:act])
+        # not pretty but it works - connect the act to the logged in user
+        act_hash = user_signed_in? ? params[:act].merge({:user_id => current_user.id}) : params[:act]
+        act = Act.create(act_hash)
         redirect_to show_card_url(act.card.uid)
       else
         flash[:error] = "We don't have a card with number #{params[:act][:card_id]}."

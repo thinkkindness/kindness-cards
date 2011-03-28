@@ -1,6 +1,12 @@
 Kindness::Application.routes.draw do
   devise_for :users
 
+  devise_scope :user do
+    get 'sign_in', :to => 'devise/sessions#new'
+    get 'sign_out', :to => 'devise/sessions#destroy'
+    get 'register', :to => 'devise/registrations#new'
+  end
+  
   # our card urls
   match '/card/create_act' => 'card#create_act', :as => :create_act
   match '/card/:uid/act' => 'card#act', :as => :act
