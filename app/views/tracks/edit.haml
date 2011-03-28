@@ -1,8 +1,14 @@
+%h1 Every card has a story, what's yours?
+
 - form_for @track, :html => { :class => [:fancy] } do |f|
   %p.center
-    %label Your Message
+    %small.small Optional
     %br
     = f.text_area :message, :cols => 60, :rows => 4
+    %input{ :type => :submit, :value => 'Add Message' }
 
-  %p.center
-    %input{ :type => :submit }
+%br
+
+- if @track.card.tracks.count > 1
+  %h2 Other Acts of Kindness For This Card
+  = render :partial => 'tracks/index', :locals => { :tracks => @track.card.tracks }

@@ -333,4 +333,7 @@ ul.tracks li .message{display:block;font-size:14pt;}
 .gravatar{margin:0 5px;}
 .float_left{float:left;}
 .float_right{float:right;}
+.left{text-align:left;}
+.right{text-align:right;}
 .center{text-align:center;}
+.small{font-size:10pt;color:#555;}

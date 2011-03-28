@@ -4,4 +4,4 @@
   = link_to 'add track', new_card_track_path(@card)
 
 %h1 Acts of Kindness For Card ##{@card.serial_number}
-= render :partial => 'tracks/index'
+= render :partial => 'tracks/index', :locals => {:tracks => @tracks}
