@@ -1,4 +1,7 @@
-- form_for [@card, @track], :html => { :class => [:fancy] } do |f|
+- form_for @track, :html => { :class => [:fancy] } do |f|
+
+  = f.hidden_field :card_id, :value => @card.try(:id)
+
   %p.center
     %label Your Card Number
     %br

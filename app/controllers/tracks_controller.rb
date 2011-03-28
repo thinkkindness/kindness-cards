@@ -19,7 +19,9 @@ class TracksController < ApplicationController
   end
 
   def new
-    @card = Card.find_by_serial_number(params[:serial_number])
+    if params[:serial_number]
+      @card = Card.find_by_serial_number(params[:serial_number])
+    end
     @track = Track.new
 
     respond_to do |format|
@@ -29,7 +31,11 @@ class TracksController < ApplicationController
   end
 
   def create
-    @card = Card.find(params[:card_id])
+    if params[:card_id]
+      @card = Card.find(params[:card_id])
+    elsif params[:track][:serial_number]
+      @card = Card.find_by_serial_number(params[:track][:serial_number])
+    end
     @track = @card.tracks.build(params[:track])
 
     respond_to do |format|
