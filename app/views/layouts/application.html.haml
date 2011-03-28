@@ -4,8 +4,8 @@
     %title kindness-card
     %meta{ :name => "apple-mobile-web-app-capable", :content => "yes" }
     %meta{ :name => "apple-mobile-web-app-status-bar-style", :content => "black" }
-    = stylesheet_link_tag 'typography', 'application'
-    = javascript_include_tag :defaults
+    = stylesheet_link_tag 'typography', 'globals'
+    = javascript_include_tag 'jquery','modernizr-1.7.min.js','rails','application'
     = csrf_meta_tag
   %body
     %header
