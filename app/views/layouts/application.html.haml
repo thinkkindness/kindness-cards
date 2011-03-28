@@ -1,28 +1,51 @@
 !!!
-%html
+%html{:class => 'no-js'}
+  / [if lt IE 7 ]> <html lang="en" class="no-js ie6"> <![endif]
+  / [if IE 7 ]>    <html lang="en" class="no-js ie7"> <![endif]
+  / [if IE 8 ]>    <html lang="en" class="no-js ie8"> <![endif]
+  / [if IE 9 ]>    <html lang="en" class="no-js ie9"> <![endif]
+  / [if (gt IE 9)|!(IE)]><!--> <html lang="en" class="no-js"> <!--<![endif]
   %head
+    %meta{'http-equiv' => 'Content-Type', :content => 'text/html; charset=utf-8'}/
+    %meta{'http-equiv' => 'X-UA-Compatible', :content => 'IE=edge,chrome=1'}/
+    / Mobile viewport optimized: j.mp/bplateviewport
+    %meta{'name' => 'viewport', :content => 'width=device-width, initial-scale=1.0'}/
     %title Kindness
-    = stylesheet_link_tag :all
+    = stylesheet_link_tag 'globals'
+    /[if IE 7]
+      = stylesheet_link_tag 'ie7'
+    /[if lte IE 6]
+      = stylesheet_link_tag 'ie6'
+      <script src="http://ie7-js.googlecode.com/svn/version/2.1(beta3)/IE7.js">IE7_PNG_SUFFIX=".png";</script>
     = javascript_include_tag 'jquery'
+    = javascript_include_tag 'modernizr-1.7.min'
     = javascript_include_tag :defaults
     = csrf_meta_tag
 
   %body
-    %h1 Think Kindness
+    .header-shadow
+    #wrapper
+      #header
+        %img{:src => '/images/card-logo.png', :width => 270, :height => 47, :class => 'card-logo'}/
+        %a{:href => root_url, :target => :blank }
+          %img{:src => '/images/tk-logo.png', :width => 140, :height => 33, :class => 'tk-logo'}
+      #content.group
+        %ul.hmenu
+          - flash.each do |name, msg|
+            = content_tag :div, msg, :id => "flash_#{name}" if msg.is_a?(String)
 
-    .content
-      %ul.hmenu
-        - flash.each do |name, msg|
-          = content_tag :div, msg, :id => "flash_#{name}" if msg.is_a?(String)
+        = yield
+        = link_to "Back to main page", root_url
+        - if user_signed_in?
+          .signed_in
+            Signed in as #{current_user.name}
+          = link_to "Sign out", sign_out_url
+        - else
+          = link_to "Sign in", sign_in_url
+          = link_to "Register", register_url
 
-      = yield
+        %a{ :href => "#{root_url}" } Back to main page
 
-  .footer
-    = link_to "Back to main page", root_url
-    - if user_signed_in?
-      .signed_in 
-        Signed in as #{current_user.name}
-      = link_to "Sign out", sign_out_url
-    - else
-      = link_to "Sign in", sign_in_url
-      = link_to "Register", register_url
+      #footer
+        %p
+          &copy; 2011 Think Kindness

@@ -1,5 +1,9 @@
+%h1 Add a story to your kindness card
 = form_tag find_url, :method => :post do 
   %fieldset
-    %legend Have a card?
-    = text_field_tag 'uid'
-    = submit_tag "Find"
+    %ol
+      %li
+        %label Your Card Number
+        = text_field_tag 'uid'
+    .submit-btn
+      = submit_tag "Continue &#187".html_safe
