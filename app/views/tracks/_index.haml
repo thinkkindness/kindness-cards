@@ -1,5 +1,6 @@
 %ul.tracks
   - tracks.each do |track|
     %li
-      %span.location In: #{track.location}
+      %span.location #{track.location}
+      %span.time #{track.created_at.strftime('%m/%d/%Y At %I:%M%p')}
       %span.message #{track.message}

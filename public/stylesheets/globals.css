@@ -324,9 +324,10 @@ h5 {
 
 /* Track Styles */
 ul.tracks{margin:0;padding:0;}
-ul.tracks li{margin:20px 10px;padding:15px;list-style:none;border:solid 1px green;border-radius:5px;}
-ul.tracks li .location{display:block;color:#555;}
-ul.tracks li .message{display:block;font-size:14pt;}
+ul.tracks li{margin:20px 10px;list-style:none;border:solid 1px #7af;border-radius:5px;}
+ul.tracks li .location{display:inline-block;color:#039;padding:5px 5px 0;font-size:12pt;}
+ul.tracks li .time{display:inline-block;float:right;color:#58f;padding:0 5px 5px;}
+ul.tracks li .message{display:block;font-size:16pt;padding:15px;}
 
 /* App styles */
 .content ul.flash_messages{background:red;color:white;padding:10px;margin:-10px -10px 10px -10px;}
