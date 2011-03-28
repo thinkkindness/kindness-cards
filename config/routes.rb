@@ -5,9 +5,10 @@ KindnessCard::Application.routes.draw do
     resources :cards
   end
 
-  resources :cards, :shallow => true do
+  resources :cards do
     resources :tracks
   end
+  resources :tracks
 
   match '/learn' => 'pages#learn'
   match '/home' => 'pages#home'

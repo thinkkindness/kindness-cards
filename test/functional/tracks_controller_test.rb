@@ -14,4 +14,8 @@ class TracksControllerTest < ActionController::TestCase
                                               :id => 'xxx' }
   end
 
+  test "tracks#new routing" do
+    assert_routing '/tracks/new', { :controller => 'tracks', :action => 'new' }
+  end
+
 end
