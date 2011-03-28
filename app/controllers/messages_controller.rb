@@ -1,4 +1,6 @@
 class MessagesController < ApplicationController
+  before_filter :authenticate_account!
+
   def index
     @messages = Message.all
 
