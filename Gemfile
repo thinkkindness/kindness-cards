@@ -19,6 +19,7 @@ group :test do
   gem "sqlite3"
 
   gem "test-unit"
+  gem "autotest"
 end
 
 group :development do
