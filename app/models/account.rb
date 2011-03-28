@@ -10,4 +10,7 @@ class Account < ActiveRecord::Base
   validates_presence_of :name
   attr_accessible :name, :street, :city, :state, :zip, :logo
 
+  has_many :cards
+  has_many :tracks
+
 end

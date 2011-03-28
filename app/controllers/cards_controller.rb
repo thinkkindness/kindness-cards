@@ -9,7 +9,8 @@ class CardsController < ApplicationController
   end
 
   def show
-    @card = Card.where(:serial_number => params[:id]).first
+    @card = Card.find(params[:id])
+    @account = Account.find(@card.account_id)
     @tracks = @card.tracks
 
     respond_to do |format|
@@ -19,6 +20,7 @@ class CardsController < ApplicationController
   end
 
   def new
+    @account = Account.find(params[:account_id])
     @card = Card.new
 
     respond_to do |format|
@@ -28,7 +30,8 @@ class CardsController < ApplicationController
   end
 
   def create
-    @card = Card.new(params[:card])
+    @account = Account.find(params[:account_id])
+    @card = @account.cards.new(params[:card])
 
     respond_to do |format|
       if @card.save

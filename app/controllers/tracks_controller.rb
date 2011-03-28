@@ -10,7 +10,7 @@ class TracksController < ApplicationController
 
   def show
     @track = Track.find(params[:id])
-    @card = @track.card
+    @card = Card.find(@track.card_id)
 
     respond_to do |format|
       format.html
@@ -19,9 +19,7 @@ class TracksController < ApplicationController
   end
 
   def new
-    if params[:card_id]
-      @card = Card.where(:serial_number => params[:card_id]).first
-    end
+    @card = Card.find(params[:card_id])
     @track = Track.new
 
     respond_to do |format|
@@ -31,12 +29,12 @@ class TracksController < ApplicationController
   end
 
   def create
-    @card = Card.where(:serial_number => params[:track][:serial_number]).first
+    @card = Card.find(params[:card_id])
     @track = @card.tracks.build(params[:track])
 
     respond_to do |format|
       if @track.save
-        format.html { redirect_to edit_track_path(@track.id) }
+        format.html { redirect_to edit_track_path(@track) }
         format.json  { render :json => @track, :status => :created, :location => @track }
       else
         format.html { render :action => "new", :flash => "Didn't save!" }
@@ -57,7 +55,7 @@ class TracksController < ApplicationController
 
     respond_to do |format|
       if @track.update_attributes(params[:track])
-        format.html { redirect_to(card_path(@card.serial_number), :notice => 'Track was successfully updated.') }
+        format.html { redirect_to(@card, :notice => 'Track was successfully updated.') }
         format.json  { head :ok }
       else
         format.html { render :action => "edit" }

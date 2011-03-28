@@ -1,21 +1,19 @@
 KindnessCard::Application.routes.draw do
 
   devise_for :accounts
-  resources :accounts
-
-  resources :cards, :except => [:edit] do
-    resources :tracks
+  resources :accounts, :shallow => true do
+    resources :cards
   end
 
-  resources :tracks do
-    resources :messages
+  resources :cards, :shallow => true do
+    resources :tracks
   end
 
   match '/learn' => 'pages#learn'
   match '/home' => 'pages#home'
 
-  match '/:id' => 'tracks#new'
-  match '/:id/messages' => 'messages#new'
+  # match '/:id' => 'tracks#new'
+  # match '/:id/messages' => 'messages#new'
 
   root :to => "tracks#new"
 

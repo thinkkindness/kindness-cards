@@ -1,5 +1,3 @@
-%p#notice= notice
-
 - if @account.logo
   .float_right #{ image_tag @account.logo, :alt => 'Logo' }
 
@@ -19,3 +17,7 @@
   %br
   #{@account.zip}
 
+%p
+  = link_to 'Add Cards', new_account_card_path(@account)
+%p
+  = render :partial => 'my_cards', :locals => {:cards => @cards}

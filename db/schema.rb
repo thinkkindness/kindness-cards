@@ -40,6 +40,7 @@ ActiveRecord::Schema.define(:version => 20110327220129) do
     t.string   "serial_number"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "account_id"
   end
 
   create_table "tracks", :force => true do |t|

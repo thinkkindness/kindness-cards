@@ -10,6 +10,7 @@ class AccountsController < ApplicationController
 
   def show
     @account = Account.find(params[:id])
+    @cards = @account.cards
 
     respond_to do |format|
       format.html

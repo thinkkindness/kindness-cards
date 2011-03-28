@@ -1,4 +1,4 @@
-- form_for @card do |f|
+- form_for [@account, @card] do |f|
   %p
     %label Card Number:
     = f.text_field :serial_number, :value => params[:id]
