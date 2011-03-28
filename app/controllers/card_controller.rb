@@ -35,6 +35,7 @@ class CardController < ApplicationController
   
   def show
     find_card(params[:uid])
+    @recent_acts = @card.acts.recent
   end
   
   private

@@ -1,1 +1,8 @@
 %p== Home for the card ##{@card.uid}
+
+%h2 Recent Kindness from this card:
+%ol.recent_acts
+  - @recent_acts.each do |act|
+    %li
+      .date= act.updated_at.to_s(:long)
+      .desc= act.description
