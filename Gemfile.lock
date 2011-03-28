@@ -1,6 +1,7 @@
 GEM
   remote: http://rubygems.org/
   specs:
+    ZenTest (4.5.0)
     abstract (1.0.0)
     actionmailer (3.0.5)
       actionpack (= 3.0.5)
@@ -29,6 +30,8 @@ GEM
       activesupport (= 3.0.5)
     activesupport (3.0.5)
     arel (2.0.9)
+    autotest (4.4.6)
+      ZenTest (>= 4.4.1)
     bcrypt-ruby (2.1.4)
     builder (2.1.2)
     cancan (1.6.3)
@@ -81,6 +84,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  autotest
   cancan (~> 1.5)
   devise (~> 1.2.rc)
   haml
