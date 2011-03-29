@@ -1,5 +1,6 @@
 class CardsController < ApplicationController
   before_filter :authenticate_account!, :except => [:show]
+  load_and_authorize_resource
 
   def index
     @cards = Card.all
