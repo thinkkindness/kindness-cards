@@ -13,4 +13,8 @@ class Account < ActiveRecord::Base
   has_many :cards
   has_many :tracks
 
+  def admin?
+    user_type == 'admin'
+  end
+
 end
