@@ -1,9 +1,9 @@
 source :gemcutter
 
-gem 'rails', '~> 3.0'
+gem 'rails', '~> 3.0.0'
 
 # Authentication
-gem 'devise', '~> 1.2.rc'
+gem 'devise', '~> 1.2'
 
 # Authorization
 gem 'cancan', '~> 1.5'
