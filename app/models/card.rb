@@ -18,6 +18,8 @@ class Card < ActiveRecord::Base
   belongs_to :accounts
   has_many :tracks
 
+  attr_accessible :serial_number
+
   def to_s
     "#{serial_number}"
   end

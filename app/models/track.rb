@@ -19,4 +19,15 @@ class Track < ActiveRecord::Base
   validates_presence_of :card_id,
                         :location
 
+  delegate  :serial_number=,
+            :to => :card
+
+  delegate  :serial_number=,
+            :to => :card,
+            :prefix => true
+
+  delegate  :serial_number,
+            :to => :card,
+            :prefix => true
+
 end
