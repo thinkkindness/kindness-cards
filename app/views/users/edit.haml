@@ -1,1 +1,16 @@
-= render 'form'
+%h1 Edit User
+
+= form_for @user, :html => {:class => :fancy} do |f|
+  -if @user.errors.any?
+    .notices
+      #errorExplanation
+        %h2= "#{pluralize(@user.errors.count, "error")} prohibited this user from being saved:"
+        %ul
+          - @user.errors.full_messages.each do |msg|
+            %li= msg
+
+  = render :partial => 'form', :locals => { f:f }
+
+  = f.submit 'Save'
+  = link_to 'Cancel', :back, :class => :btn
+
