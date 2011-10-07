@@ -11,18 +11,9 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111007025925) do
+ActiveRecord::Schema.define(:version => 20111007051949) do
 
   create_table "accounts", :force => true do |t|
-    t.string   "email",                               :default => "", :null => false
-    t.string   "encrypted_password",   :limit => 128, :default => "", :null => false
-    t.string   "reset_password_token"
-    t.datetime "remember_created_at"
-    t.integer  "sign_in_count",                       :default => 0
-    t.datetime "current_sign_in_at"
-    t.datetime "last_sign_in_at"
-    t.string   "current_sign_in_ip"
-    t.string   "last_sign_in_ip"
     t.string   "street"
     t.string   "city"
     t.string   "zip"
@@ -32,11 +23,7 @@ ActiveRecord::Schema.define(:version => 20111007025925) do
     t.string   "name"
     t.string   "phone"
     t.string   "state"
-    t.string   "user_type"
   end
-
-  add_index "accounts", ["email"], :name => "index_accounts_on_email", :unique => true
-  add_index "accounts", ["reset_password_token"], :name => "index_accounts_on_reset_password_token", :unique => true
 
   create_table "cards", :force => true do |t|
     t.string   "serial_number"
