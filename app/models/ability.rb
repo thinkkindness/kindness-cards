@@ -6,6 +6,7 @@ class Ability
     if current_user.admin?
       can :manage, :all
     else
+      can :manage, User, :id => current_user.id
       can :read, :all
     end
   end
