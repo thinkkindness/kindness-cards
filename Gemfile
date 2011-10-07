@@ -2,6 +2,9 @@ source :gemcutter
 
 gem 'rails', '~> 3.0.0'
 
+# controller utilities
+gem 'decent_exposure'
+
 # Authentication
 gem 'devise', '~> 1.2'
 
