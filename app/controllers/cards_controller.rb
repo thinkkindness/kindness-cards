@@ -2,6 +2,8 @@ class CardsController < ApplicationController
   before_filter :authenticate_account!, :except => [:show]
   load_and_authorize_resource
 
+  # General public should not be able to see all cards in the system.
+  #
   def index
     @cards = Card.all
 
