@@ -25,4 +25,8 @@ end
 group :development do
   gem "sqlite3"
   gem "rails-erd"
+
+  # documentation
+  gem 'annotate',
+      :require => false
 end
