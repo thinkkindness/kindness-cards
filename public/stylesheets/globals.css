@@ -1,4 +1,4 @@
-/* =================================================== 
+/* ===================================================
 
 TABLE OF CONTENTS
 
@@ -74,12 +74,13 @@ li { vertical-align: top }
 
 /* BUTTONS */
 
-.btn, input[type=submit] { 
+.btn, input[type=submit] {
   padding: 10px 20px;
   margin: 20px 0;
   background: #b3d21e;
   color: #fff;
   text-shadow: #737f3a 0 -1px 0;
+  text-decoration: none;
   -webkit-text-shadow: #737f3a 0 -1px 0;
   -moz-text-shadow: #737f3a 0 -1px 0;
   border-radius: 5px;
@@ -102,6 +103,11 @@ li { vertical-align: top }
   box-shadow: #000 0 0 5px;
   -webkit-box-shadow: #595959 0 0 5px;
   -moz-box-shadow: #595959 0 0 5px;
+}
+
+.btn.small {
+	padding: 3px 5px;
+	color: white;
 }
 
 .btn:hover {
@@ -151,7 +157,7 @@ li { vertical-align: top }
   left: 0;
   display: block;
   z-index: -1
-  
+
 }
 
 /* TABLES */
@@ -241,7 +247,7 @@ body, p {
 
 p { margin: 10px 0 }
 
-a { 
+a {
 
 }
 
@@ -255,10 +261,10 @@ h1 {
   line-height: 1.2;
   margin: 0 0 20px 0;
   padding-bottom: 20px;
-  
+
   border-bottom: 1px #e0e0e0 solid
 }
-h2 {  
+h2 {
   font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
   color: #009dbb;
   font-size: 20px;
@@ -266,7 +272,7 @@ h2 {
   line-height: 1.2;
   margin: 20px 0;
 }
-h3 { 
+h3 {
   font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
   color: #ababab;
   font-weight: bold;
@@ -297,7 +303,7 @@ h5 {
 =================================================== */
 
 #header .card-logo {
-  
+
 }
 
 #header .tk-logo {
