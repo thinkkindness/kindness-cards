@@ -10,6 +10,7 @@ gem 'cancan', '~> 1.5'
 
 # Other
 gem 'haml'
+gem 'sass'
 
 group :production do
   gem "pg" # database
