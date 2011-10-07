@@ -34,8 +34,8 @@ GEM
       ZenTest (>= 4.4.1)
     bcrypt-ruby (3.0.1)
     builder (2.1.2)
-    cancan (1.6.5)
-    devise (1.4.6)
+    cancan (1.6.7)
+    devise (1.4.7)
       bcrypt-ruby (~> 3.0)
       orm_adapter (~> 0.0.3)
       warden (~> 1.0.3)
@@ -79,7 +79,7 @@ GEM
     treetop (1.4.10)
       polyglot
       polyglot (>= 0.3.1)
-    tzinfo (0.3.29)
+    tzinfo (0.3.30)
     warden (1.0.5)
       rack (>= 1.0)
 
