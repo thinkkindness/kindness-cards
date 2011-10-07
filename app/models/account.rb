@@ -22,5 +22,6 @@ class Account < ActiveRecord::Base
   attr_accessible :name, :street, :city, :state, :zip, :logo
 
   has_many :cards
+  has_many :users
 
 end
