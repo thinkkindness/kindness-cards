@@ -1,8 +1,13 @@
 KindnessCard::Application.routes.draw do
 
-  devise_for :accounts
-  resources :accounts, :shallow => true do
-    resources :cards
+  devise_for :users
+
+  resources :users, :shallow => true do
+    resources :accounts do
+      resources :cards do
+        resources :tracks
+      end
+    end
   end
 
   resources :cards do
