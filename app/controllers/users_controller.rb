@@ -3,7 +3,8 @@ class UsersController < ApplicationController
   load_and_authorize_resource
 
   def index
-    redirect_to user_path(current_user) unless can? :manage, @users
+    # Only admins can see all users - redirect to user page if not
+    redirect_to user_path(current_user) unless current_user.admin?
   end
 
   def show
