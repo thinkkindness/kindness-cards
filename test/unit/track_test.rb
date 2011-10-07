@@ -18,7 +18,8 @@ class TrackTest < ActiveSupport::TestCase
   test "requires card (has card)" do
     card = Card.create!(CardTest::REQUIRED_FIELDS)
 
-    card.tracks.create!(REQUIRED_FIELDS)
+    track = card.tracks.create!(REQUIRED_FIELDS)
+    assert_equal "Reno, NV", track.location
   end
 
 end
