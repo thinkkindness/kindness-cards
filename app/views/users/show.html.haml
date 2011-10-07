@@ -1,5 +1,6 @@
+- unless @user.email.blank?
+  .float_left= gravatar_for @user
 .float_right= link_to "Edit", edit_user_path(@user), :class => :btn
 %h1= @user.name
-
 %p= @user.email
 %p= @user.phone

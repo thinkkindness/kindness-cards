@@ -1,6 +1,2 @@
-- if account_signed_in?
-  %li
-    = link_to('Edit account', edit_account_registration_path)
-- else
-  %li
-    = link_to('Sign up', new_account_registration_path)
+- unless user_signed_in?
+  = link_to('Sign up', new_user_registration_path)

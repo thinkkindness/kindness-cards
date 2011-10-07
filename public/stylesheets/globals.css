@@ -337,7 +337,7 @@ ul.tracks li .message{display:block;font-size:16pt;padding:15px;}
 
 /* App styles */
 ul.flash_messages{background:#479;color:white;padding:10px;margin:-10px -10px 10px -10px;border-radius:4px;}
-.gravatar{margin:0 5px;}
+.gravatar{margin:0 5px;vertical-align:bottom;}
 .float_left{float:left;}
 .float_right{float:right;}
 .left{text-align:left;}

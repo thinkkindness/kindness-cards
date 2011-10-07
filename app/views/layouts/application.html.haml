@@ -23,5 +23,8 @@
 
         = yield
 
+        - if current_user
+          = render partial: 'layouts/footer'
+
     #footer
       &copy; 2011 Think Kindness
