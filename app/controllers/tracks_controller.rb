@@ -1,5 +1,11 @@
 class TracksController < ApplicationController
 
+  expose(:card) do
+    track.card ||
+        Card.find_by_serial_number(params[:serial_number] || params[:card_id]) ||
+        Card.find(params[:card_id]) ||
+        Card.find(params[:track][:serial_number])
+  end
   expose(:tracks) { Track.all }
   expose(:track)
     # TODO: a Track has an owner once created, and should only be editable by them
@@ -62,27 +68,4 @@ class TracksController < ApplicationController
       # FAIL
     end
   end
-
-  private
-
-    def card
-      unless @card
-        @card = track.try(:card)
-        @card ||= Card.find_by_serial_number(params[:serial_number] || params[:card_id])
-
-        begin
-          @card ||= Card.find(params[:card_id])
-        rescue ActiveRecord::RecordNotFound
-        end
-
-        begin
-          @card ||= Card.find(params[:track][:serial_number]) if params[:track]
-        rescue ActiveRecord::RecordNotFound
-        end
-      end
-
-      @card
-    end
-    helper_method :card
-
 end
