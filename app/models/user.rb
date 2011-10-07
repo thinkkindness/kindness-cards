@@ -35,7 +35,7 @@ class User < ActiveRecord::Base
   validates_presence_of :name
   attr_accessible :name, :street, :city, :state, :zip, :logo
 
-  has_one :account
+  belongs_to :account
 
   def admin?
     user_type == 'admin'
