@@ -1,3 +1,14 @@
+# == Schema Information
+#
+# Table name: cards
+#
+#  id            :integer         not null, primary key
+#  serial_number :string(255)
+#  created_at    :datetime
+#  updated_at    :datetime
+#  account_id    :integer
+#
+
 class Card < ActiveRecord::Base
 
   validates_uniqueness_of :serial_number
