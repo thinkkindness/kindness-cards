@@ -1,8 +1,8 @@
-- unless @card.blank?
+- unless card.blank?
   Card:
-  = link_to @card.serial_number, @card
+  = link_to card.serial_number, card
   %br
 
-Time: #{@track.created_at}
+Time: #{track.created_at}
 %br
-Location: #{@track.location}
+Location: #{track.location}
