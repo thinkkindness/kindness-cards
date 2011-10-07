@@ -162,7 +162,7 @@ li { vertical-align: top }
 
 /* TABLES */
 table {}
-table td {}
+table td {padding:5px;}
 table thead td {}
 
 

@@ -1,0 +1,7 @@
+%tr
+  %td= account.name
+  %td= account.city
+  %td
+    = link_to 'Show', account
+    = link_to 'Edit', edit_account_path(account)
+    = link_to 'Destroy', account, :confirm => 'Are you sure?', :method => :delete
